@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propuesta para Cabanas do Navia · Kulmen Visuals</title>
-<meta name="description" content="Más reservas, en todas las temporadas, y a mejor precio. Fotografía, vídeo y dron FPV cinematográfico para alojamientos rurales premium.">
-<meta property="og:title" content="Propuesta para Cabanas do Navia · Kulmen Visuals">
-<meta property="og:description" content="Más reservas, en todas las temporadas, y a mejor precio.">
+<title>Servicios audiovisuales para inmobiliarias · Kulmen Visuals</title>
+<meta name="description" content="Vende y alquila antes, y a mejor precio. Fotografía HDR, vídeo de presentación y dron FPV cinematográfico para inmobiliarias y propiedades premium.">
+<meta property="og:title" content="Servicios audiovisuales para inmobiliarias · Kulmen Visuals">
+<meta property="og:description" content="Vende y alquila antes, y a mejor precio. Contenido visual profesional para inmobiliarias.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#09090b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309090b'/%3E%3Ctext x='32' y='45' font-family='sans-serif' font-size='38' font-weight='700' fill='%23f59715' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
@@ -245,7 +245,7 @@
   .bridge .btn { padding: 15px 30px; font-size: 14px; }
 
   /* ============ FORMATOS ============ */
-  .formats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+  .formats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
   .format {
     padding: 34px 30px; background: var(--carbon); border: 1px solid var(--linea);
     border-radius: var(--r-lg); position: relative; overflow: hidden;
@@ -344,6 +344,22 @@
     width: 100%; aspect-ratio: 9/16; height: auto; border: 0; display: block;
     transform: scale(1.2); transform-origin: 50% 50%;
   }
+  .project-placeholder {
+    width: 100%; aspect-ratio: 9/16; display: grid; place-items: center; gap: 14px;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(245,151,21,.08), transparent 60%),
+      repeating-linear-gradient(135deg, rgba(250,250,250,.02) 0 12px, transparent 12px 24px),
+      var(--carbon-2);
+    color: var(--niebla-2); text-align: center; padding: 24px;
+  }
+  .project-placeholder .pp-play {
+    width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+    color: var(--ambar); border: 1px solid rgba(245,151,21,.4); background: rgba(245,151,21,.08);
+  }
+  .project-placeholder .pp-play svg { width: 22px; height: 22px; }
+  .project-placeholder span {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--niebla-2);
+  }
   .project-meta { text-align: center; max-width: 330px; margin: 0 auto; }
   .project-client { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 8px; }
   .project-title { font-size: 1.14rem; font-weight: 600; letter-spacing: -.015em; margin-bottom: 16px; color: var(--hueso); }
@@ -356,6 +372,23 @@
   .project-metric span { display: block; font-family: var(--mono); font-size: 8px; letter-spacing: .06em; text-transform: uppercase; color: var(--niebla-2); margin-top: 5px; line-height: 1.35; }
   .project-desc { font-size: .88rem; color: var(--niebla); line-height: 1.6; font-weight: 300; }
   .project-desc strong { color: var(--hueso); font-weight: 600; }
+
+  /* ============ VÍDEOS DESTACADOS (16:9) ============ */
+  .feature-videos { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+  .feature-video {
+    border-radius: var(--r-lg); overflow: hidden; background: #000;
+    border: 1px solid var(--linea-fuerte); box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    transition: transform .4s var(--ease), border-color .4s, box-shadow .4s var(--ease);
+  }
+  .feature-video:hover {
+    transform: translateY(-5px); border-color: rgba(245,151,21,.5);
+    box-shadow: 0 28px 64px rgba(0,0,0,.55), 0 0 44px rgba(245,151,21,.08);
+  }
+  .fv-frame { position: relative; aspect-ratio: 16/9; background: #000; }
+  .fv-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  .fv-meta { padding: 16px 20px 18px; }
+  .fv-client { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 5px; }
+  .fv-title { font-size: 1.02rem; font-weight: 600; letter-spacing: -.015em; color: var(--hueso); }
 
   .gallery-head { margin-top: clamp(72px, 8vw, 104px); display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
   .gallery-head h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); font-weight: 600; letter-spacing: -.02em; color: var(--hueso); }
@@ -408,7 +441,7 @@
     width: 720px; height: 520px; border-radius: 50%; pointer-events: none;
     background: radial-gradient(circle, rgba(245,151,21,.1), transparent 65%);
   }
-  .programs { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; align-items: stretch; position: relative; }
+  .programs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; align-items: stretch; position: relative; }
   .program {
     background: var(--carbon); padding: 38px 30px 30px; border: 1px solid var(--linea);
     border-radius: var(--r-lg); position: relative;
@@ -473,6 +506,61 @@
   .assurance-item svg { width: 22px; height: 22px; color: var(--ambar); flex-shrink: 0; }
   .assurance-item span { font-size: .85rem; color: var(--niebla); line-height: 1.5; font-weight: 300; }
   .assurance-item strong { color: var(--hueso); font-weight: 600; display: block; font-size: .89rem; }
+
+  /* ============ TABLA DE TARIFAS ============ */
+  .price-scroll {
+    position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border-radius: var(--r-lg); border: 1px solid var(--linea-fuerte); background: var(--carbon);
+  }
+  .price-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+  .price-table thead th {
+    text-align: center; padding: 22px 18px; vertical-align: bottom;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--niebla); font-weight: 700; border-bottom: 1px solid var(--linea-fuerte);
+  }
+  .price-table thead th:first-child { text-align: left; color: var(--niebla-2); }
+  .price-table thead th.col-featured { color: var(--ambar); }
+  .price-table thead th .col-tag {
+    display: block; margin-top: 6px; font-size: 9px; letter-spacing: .16em; color: var(--ambar); font-weight: 700;
+  }
+  .price-table tbody th {
+    text-align: left; padding: 18px; font-weight: 600; color: var(--hueso); font-size: .96rem;
+    border-bottom: 1px solid var(--linea); white-space: nowrap;
+  }
+  .price-table tbody th small {
+    display: block; margin-top: 3px; font-family: var(--mono); font-size: 10px; letter-spacing: .05em;
+    color: var(--niebla-2); font-weight: 400; text-transform: none;
+  }
+  .price-table tbody td {
+    text-align: center; padding: 18px; color: var(--niebla); font-size: 1.02rem; font-weight: 600;
+    border-bottom: 1px solid var(--linea); white-space: nowrap;
+  }
+  .price-table td.col-featured { color: var(--hueso); background: rgba(245,151,21,.06); }
+  .price-table tbody tr:last-child th,
+  .price-table tbody tr:last-child td { border-bottom: 0; }
+  .price-note { margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--niebla-2); text-align: center; }
+
+  .price-extra {
+    margin-top: 20px; padding: 26px 30px; border-radius: var(--r-lg);
+    border: 1px solid rgba(245,151,21,.3);
+    background: linear-gradient(135deg, rgba(245,151,21,.08), rgba(245,151,21,.01));
+    display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .price-extra .pe-info h3 { color: var(--hueso); font-size: 1.15rem; font-weight: 600; letter-spacing: -.015em; margin-bottom: 6px; }
+  .price-extra .pe-info p { font-size: .92rem; color: var(--niebla); font-weight: 300; line-height: 1.6; max-width: 560px; }
+  .price-extra .pe-price { font-size: 1.9rem; font-weight: 700; letter-spacing: -.03em; color: var(--ambar); white-space: nowrap; line-height: 1; }
+  .price-extra .pe-price small { display: block; margin-top: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--niebla-2); font-weight: 400; text-align: right; }
+
+  .included { margin-top: 20px; padding: 30px 32px; border-radius: var(--r-lg); background: var(--carbon); border: 1px solid var(--linea); }
+  .included h3 { font-size: 1.05rem; color: var(--hueso); font-weight: 600; margin-bottom: 20px; }
+  .included ul { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px 30px; }
+  .included li { position: relative; padding-left: 28px; font-size: .94rem; color: var(--niebla); font-weight: 300; line-height: 1.5; }
+  .included li::before {
+    content: ''; position: absolute; left: 0; top: 4px; width: 15px; height: 15px; background-color: var(--ambar);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .price-cta-row { display: flex; justify-content: center; margin-top: 34px; }
 
   /* ============ PILARES ============ */
   .benefits-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
@@ -676,6 +764,8 @@
   @media (max-width: 1020px) {
     .formats, .problems, .programs, .projects, .credentials, .assurance { grid-template-columns: 1fr; }
     .benefits-grid { grid-template-columns: 1fr; }
+    .included ul { grid-template-columns: 1fr; }
+    .feature-videos { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
     .photo-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .about-portrait-wrap { max-width: 360px; }
@@ -706,6 +796,9 @@
     .fab { right: 18px; bottom: 18px; }
     .faq-a { padding-right: 4px; }
     .benefit { flex-direction: column; }
+    .price-extra { flex-direction: column; align-items: flex-start; }
+    .price-extra .pe-price { font-size: 1.6rem; }
+    .price-extra .pe-price small { text-align: left; }
   }
 </style>
 </head>
@@ -719,11 +812,11 @@
       <img class="logo-word" src="logos/KV__logotipo blanco.png" alt="Kulmen Visuals">
     </a>
     <nav class="top-nav" aria-label="Navegación principal">
-      <a href="#propuesta">Propuesta</a>
+      <a href="#servicios">Servicios</a>
       <a href="#trabajo">Trabajo</a>
-      <a href="#programas">Programas</a>
+      <a href="#precios">Precios</a>
       <a href="#quien">Quién soy</a>
-      <a class="top-cta" data-wa data-wa-msg="Hola Io, hemos visto la propuesta para Cabanas do Navia y nos gustaría hablar contigo." href="#">
+      <a class="top-cta" data-wa data-wa-msg="Hola Io, soy de una inmobiliaria y me gustaría saber más sobre vuestros servicios audiovisuales." href="#">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.8-4.3-.1-.2-1.2-1.5-1.2-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.3z"/></svg>
         Hablemos
       </a>
@@ -737,16 +830,16 @@
   <div class="hero-video" id="heroVideo" aria-hidden="true"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-content">
-    <div class="hero-eyebrow reveal">Propuesta · Cabanas do Navia</div>
-    <h1 class="reveal">Reservas constantes. <em>Y a mejor precio.</em></h1>
-    <p class="lead reveal">Contenido estratégico que os hace visibles a públicos nuevos y os posiciona por lo que realmente valéis.</p>
+    <div class="hero-eyebrow reveal">Servicios audiovisuales · Inmobiliarias</div>
+    <h1 class="reveal">Vende antes. <em>Y a mejor precio.</em></h1>
+    <p class="lead reveal">Contenido visual que hace que vuestras propiedades se vendan más rápido y eleva su percepción de valor desde el primer clic.</p>
     <div class="hero-actions reveal">
-      <a href="#programas" class="btn">Ver programas y precios <span class="arrow">→</span></a>
+      <a href="#precios" class="btn">Ver servicios y precios <span class="arrow">→</span></a>
     </div>
     <div class="hero-stats reveal" role="list">
-      <div class="stat" role="listitem"><strong>+123 %</strong><span>alcance orgánico promedio</span></div>
-      <div class="stat" role="listitem"><strong>4 estaciones</strong><span>contenido todo el año</span></div>
-      <div class="stat" role="listitem"><strong>10 días</strong><span>entrega desde el rodaje</span></div>
+      <div class="stat" role="listitem"><strong>4 servicios</strong><span>foto, vídeo y dron FPV</span></div>
+      <div class="stat" role="listitem"><strong>Percepción premium</strong><span>desde el primer clic</span></div>
+      <div class="stat" role="listitem"><strong>Entrega ágil</strong><span>listo para publicar</span></div>
     </div>
   </div>
   <a class="scroll-cue" href="#diagnostico" aria-label="Bajar a la siguiente sección">Descubrir<span class="line"></span></a>
@@ -756,50 +849,50 @@
 <section id="diagnostico">
   <div class="wrap">
     <span class="eyebrow reveal">El diagnóstico</span>
-    <h2 class="section-title reveal">El problema que os está costando <em>reservas</em> ahora mismo</h2>
-    <p class="section-intro reveal">Habéis construido un producto que compite con hoteles de 5 estrellas. Pero en Instagram, en Booking y en TikTok, vuestras cabañas se ven parecidas a cualquier alojamiento rural gallego con buenas fotos. Ese desajuste tiene tres consecuencias directas en vuestras reservas:</p>
+    <h2 class="section-title reveal">Lo que está frenando <em>vuestras ventas</em> ahora mismo</h2>
+    <p class="section-intro reveal">Tenéis propiedades excelentes en cartera. Pero en los portales, en Instagram y en cada búsqueda de Google, se ven casi iguales que las del resto de agencias: fotos hechas con prisas, sin vídeo y sin una sola imagen que detenga el scroll. Ese desajuste tiene tres consecuencias directas en vuestras ventas:</p>
 
     <div class="problems">
       <div class="problem reveal">
         <div class="problem-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a13.16 13.16 0 0 1-1.67 2.68M6.61 6.61A13.53 13.53 0 0 0 2 12s3 8 10 8a9.74 9.74 0 0 0 5.39-1.61M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M2 2l20 20"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18M10 14l4 4M14 14l-4 4"/></svg>
         </div>
-        <span class="problem-kicker">Alcance</span>
-        <h3>No llegáis a públicos nuevos</h3>
-        <p>El contenido estándar no se comparte, no se guarda, no viaja. Solo os encuentra quien ya os estaba buscando.</p>
+        <span class="problem-kicker">Tiempo en mercado</span>
+        <h3>Las propiedades tardan en venderse</h3>
+        <p>Un anuncio que no destaca se queda semanas en el portal, acumula bajadas de precio y transmite la sensación de que "algo tiene". Cada día de más cuesta dinero.</p>
       </div>
       <div class="problem reveal">
         <div class="problem-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
         </div>
         <span class="problem-kicker">Percepción y precio</span>
-        <h3>Vendéis por debajo de vuestro valor</h3>
-        <p>Cuando la presencia visual no está a la altura del producto, el cliente entra por precio y negocia. Cuando sí lo está, entra convencido de que ya es una oportunidad.</p>
+        <h3>Se vende por debajo de su valor</h3>
+        <p>Cuando la presencia visual no está a la altura del inmueble, el comprador entra por precio y negocia a la baja. Cuando sí lo está, entra convencido de que ya es una oportunidad.</p>
       </div>
       <div class="problem reveal">
         <div class="problem-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18M10 14l4 4M14 14l-4 4"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a13.16 13.16 0 0 1-1.67 2.68M6.61 6.61A13.53 13.53 0 0 0 2 12s3 8 10 8a9.74 9.74 0 0 0 5.39-1.61M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M2 2l20 20"/></svg>
         </div>
-        <span class="problem-kicker">Estacionalidad</span>
-        <h3>Dependéis de temporada alta</h3>
-        <p>Sin contenido estacional constante, en octubre desaparecéis del feed, en enero también, y en marzo os toca empezar de cero.</p>
+        <span class="problem-kicker">Captación</span>
+        <h3>Cuesta ganar exclusivas</h3>
+        <p>El propietario elige a la agencia que mejor va a presentar su casa. Sin material que demuestre ese nivel, competís solo por comisión.</p>
       </div>
     </div>
 
     <div class="bridge reveal">
-      <h3>Los tres problemas tienen la misma raíz: <em>el contenido</em>.</h3>
+      <h3>Los tres problemas tienen la misma raíz: <em>cómo se ve la propiedad</em>.</h3>
       <p>Y eso es exactamente lo que resolvemos.</p>
-      <a href="#propuesta" class="btn">Ver cómo <span class="arrow">→</span></a>
+      <a href="#servicios" class="btn">Ver cómo <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ LA PROPUESTA ============ -->
-<section id="propuesta">
+<!-- ============ LOS SERVICIOS ============ -->
+<section id="servicios">
   <div class="wrap">
-    <span class="eyebrow reveal">La propuesta</span>
-    <h2 class="section-title reveal">Tres formatos que juntos construyen una <em>presencia completa</em></h2>
-    <p class="section-intro reveal">Trabajo tres formatos que se complementan y que juntos construyen la presencia visual completa de un alojamiento premium.</p>
+    <span class="eyebrow reveal">Los servicios</span>
+    <h2 class="section-title reveal">Cuatro formatos que <em>venden la propiedad</em> por vosotros</h2>
+    <p class="section-intro reveal">Cada servicio se contrata por separado y cubre una parte del recorrido del comprador: desde el primer vistazo en el portal hasta la visita virtual completa. Juntos, elevan la percepción de cualquier inmueble.</p>
 
     <div class="formats">
       <div class="format format-camera reveal">
@@ -808,8 +901,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
         </div>
         <span class="format-kicker">La base</span>
-        <h3>Fotografía profesional</h3>
-        <p>Lo primero que ve un cliente cuando descubre las cabañas en Instagram, Booking o Google. Fotos editadas y optimizadas para cada plataforma, pero también pensadas para alimentar vuestras redes, ganar alcance y empujar reservas directas desde la web.</p>
+        <h3>Fotografía HDR</h3>
+        <p>Lo primero que ve un comprador en Idealista, Fotocasa o vuestra web. Fotografía HDR con luces equilibradas, ventanas que no se queman y espacios que se ven amplios y luminosos. La imagen que decide si hacen clic o siguen bajando.</p>
       </div>
       <div class="format format-reel reveal">
         <span class="format-glare" aria-hidden="true"></span>
@@ -817,9 +910,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg>
           <span class="reel-bars" aria-hidden="true"><i></i><i></i><i></i></span>
         </div>
-        <span class="format-kicker">El alcance</span>
-        <h3>Reels y vídeo social</h3>
-        <p>Piezas cortas verticales pensadas para Instagram y TikTok, con la lógica editorial que hoy funciona en esas plataformas: parar el scroll en los primeros dos segundos, guardar y compartir.</p>
+        <span class="format-kicker">El recorrido</span>
+        <h3>Vídeo de presentación</h3>
+        <p>Un recorrido en vídeo que enseña la propiedad como se vive: la entrada, la luz de cada estancia, las vistas. Filtra visitas poco cualificadas y hace que quien llega a verla ya venga convencido.</p>
       </div>
       <div class="format format-drone reveal">
         <span class="format-glare" aria-hidden="true"></span>
@@ -827,8 +920,17 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="5" r="2.6"/><circle cx="19" cy="5" r="2.6"/><circle cx="5" cy="19" r="2.6"/><circle cx="19" cy="19" r="2.6"/><rect x="9.4" y="9.4" width="5.2" height="5.2" rx="1.4"/><path d="M7 7l2.6 2.6M17 7l-2.6 2.6M7 17l2.6-2.6M17 17l-2.6-2.6"/></svg>
         </div>
         <span class="format-kicker">La diferencia</span>
-        <h3>Dron FPV cinematográfico</h3>
-        <p>La especialidad, y el factor que os diferencia. Vídeo con dron inmersivo que muy pocas propiedades en Galicia pueden ofrecer, porque requiere años de práctica, homologación EASA/AESA y equipo específico.</p>
+        <h3>Drone Tour Inmobiliario</h3>
+        <p>La especialidad. Un recorrido del inmueble en plano secuencia y primera persona con dron FPV, interior y exterior, sin cortes. El formato que convierte un anuncio en una experiencia inmersiva, y que muy pocas agencias pueden ofrecer: requiere años de práctica, homologación EASA/AESA y equipo específico.</p>
+      </div>
+      <div class="format format-drone reveal">
+        <span class="format-glare" aria-hidden="true"></span>
+        <div class="format-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6M9.5 11h.01M14.5 11h.01"/></svg>
+        </div>
+        <span class="format-kicker">El contexto</span>
+        <h3>Vídeo dron exterior</h3>
+        <p>Tomas aéreas que sitúan el inmueble en su entorno: parcela, orientación, cercanía al mar, al monte o al centro. Fundamentales en chalets, fincas y obra nueva, donde el terreno y la ubicación son parte del valor.</p>
       </div>
     </div>
   </div>
@@ -838,58 +940,43 @@
 <section id="trabajo">
   <div class="wrap">
     <span class="eyebrow reveal">Trabajo real</span>
-    <h2 class="section-title reveal">Proyectos con <em>alojamientos e inmobiliarias</em></h2>
-    <p class="section-intro reveal">He trabajado con alojamientos turísticos e inmobiliarias en Galicia y España. Analizo cada caso para cumplir su objetivo concreto: en el vuestro, generar más reservas a través de las redes sociales.</p>
+    <h2 class="section-title reveal">Casos con <em>propiedades e inmobiliarias</em></h2>
+    <p class="section-intro reveal">Un ejemplo real de cada formato de vídeo aplicado a propiedades. La fotografía la tienes más abajo, en la galería.</p>
 
-    <div class="projects">
-      <div class="project reveal">
-        <div class="project-video">
-          <iframe src="https://player.vimeo.com/video/1210437296?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reel FPV — Cabanas Ribeira Sacra"></iframe>
+    <div class="feature-videos">
+      <div class="feature-video reveal">
+        <div class="fv-frame">
+          <iframe src="https://player.vimeo.com/video/1212461238?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Vídeo de presentación de propiedad"></iframe>
         </div>
-        <div class="project-meta">
-          <div class="project-client">Cabanas Ribeira Sacra</div>
-          <div class="project-title">Reels FPV + reportaje fotográfico</div>
-          <div class="project-metrics">
-            <div class="project-metric"><strong>+500.000</strong><span>visualizaciones</span></div>
-            <div class="project-metric"><strong>+4.000</strong><span>seguidores nuevos</span></div>
-          </div>
-          <p class="project-desc">En solo <strong>3 publicaciones</strong>. Producción integral: Reels FPV para redes y reportaje fotográfico completo para web y portales.</p>
+        <div class="fv-meta">
+          <div class="fv-client">Vídeo de presentación</div>
+          <div class="fv-title">Recorrido de propiedad</div>
         </div>
       </div>
-      <div class="project reveal">
-        <div class="project-video">
-          <iframe src="https://player.vimeo.com/video/1210534720?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reel FPV — Spanish Spaces"></iframe>
+      <div class="feature-video reveal">
+        <div class="fv-frame">
+          <iframe src="https://player.vimeo.com/video/1212461582?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone Tour Inmobiliario FPV"></iframe>
         </div>
-        <div class="project-meta">
-          <div class="project-client">Spanish Spaces</div>
-          <div class="project-title">Reels FPV + reportaje fotográfico</div>
-          <div class="project-metrics">
-            <div class="project-metric"><strong>210</strong><span>guardados / publicación</span></div>
-            <div class="project-metric"><strong>140</strong><span>compartidos / publicación</span></div>
-          </div>
-          <p class="project-desc">Medias por publicación en una <strong>campaña de 5 piezas</strong> para agencia inmobiliaria de propiedades singulares.</p>
+        <div class="fv-meta">
+          <div class="fv-client">Drone Tour Inmobiliario</div>
+          <div class="fv-title">Plano secuencia FPV · interior y exterior</div>
         </div>
       </div>
-      <div class="project reveal">
-        <div class="project-video">
-          <iframe src="https://player.vimeo.com/video/1210443257?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Reel FPV — Villa Boutique 1880"></iframe>
+      <div class="feature-video reveal">
+        <div class="fv-frame">
+          <iframe src="https://player.vimeo.com/video/1212462246?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Vídeo dron exterior"></iframe>
         </div>
-        <div class="project-meta">
-          <div class="project-client">Villa Boutique 1880</div>
-          <div class="project-title">Reel FPV cinematográfico</div>
-          <div class="project-metrics">
-            <div class="project-metric"><strong>+830</strong><span>compartidos</span></div>
-            <div class="project-metric"><strong>+350</strong><span>guardados</span></div>
-          </div>
-          <p class="project-desc">Con un <strong>único reel</strong> de dron FPV para un hotel boutique de gama alta.</p>
+        <div class="fv-meta">
+          <div class="fv-client">Vídeo dron exterior</div>
+          <div class="fv-title">Tomas aéreas y entorno</div>
         </div>
       </div>
     </div>
 
     <div class="gallery-head reveal">
       <div>
-        <h3>Muestras de reportaje fotográfico</h3>
-        <p>Fotografía de interior, exterior y detalle para alojamientos y espacios.</p>
+        <h3>Muestras de fotografía</h3>
+        <p>Fotografía HDR de interior, exterior y detalle para propiedades y espacios.</p>
       </div>
       <span class="gallery-hint">Clic para ampliar</span>
     </div>
@@ -904,7 +991,11 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIO ============ -->
+<!-- ============ TESTIMONIO ============
+     PLACEHOLDER — reactiva esta sección cuando tengas una reseña de una inmobiliaria.
+     Sustituye el texto de <blockquote> y de <strong>/<span> por los datos reales
+     y quita los comentarios de apertura/cierre para que vuelva a mostrarse.
+
 <section>
   <div class="wrap-narrow">
     <div class="quote-block reveal">
@@ -916,72 +1007,80 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
       </span>
       <blockquote>
-        <p>Un placer tener a Io trabajando en nuestras cabañas. Unos vídeos preciosos. Por supuesto, nos volveremos a ver.</p>
+        <p>Reseña de la inmobiliaria aquí.</p>
         <footer class="quote-author">
-          <strong>Miguel Álvarez</strong>
-          <span>Propietario · Cabanas Ribeira Sacra</span>
+          <strong>Nombre del contacto</strong>
+          <span>Cargo · Nombre de la inmobiliaria</span>
         </footer>
       </blockquote>
     </div>
   </div>
 </section>
+============ FIN TESTIMONIO ============ -->
 
-<!-- ============ PROGRAMAS ============ -->
-<section class="offer" id="programas">
+<!-- ============ PRECIOS ============ -->
+<section class="offer" id="precios">
   <div class="wrap">
-    <span class="eyebrow reveal">Los tres programas</span>
-    <h2 class="section-title reveal">Escoged según <em>el objetivo</em></h2>
-    <p class="section-intro reveal">Desde probar la especialidad hasta un programa continuo pensado para las cuatro estaciones. Cada programa está diseñado para una fase distinta de crecimiento.</p>
+    <span class="eyebrow reveal">Precios</span>
+    <h2 class="section-title reveal">Tarifas por <em>tipo de inmueble</em></h2>
+    <p class="section-intro reveal">Fotografía HDR, Vídeo de presentación y Drone Tour comparten la misma escala de tarifas según el tamaño del inmueble. El Vídeo dron exterior tiene precio propio. Contratáis solo lo que necesita cada propiedad; para carteras grandes, tarifa a medida.</p>
 
-    <div class="programs">
-      <div class="program reveal">
-        <div class="program-num">Programa 01</div>
-        <div class="program-name">Reels FPV Signature</div>
-        <div class="program-tagline">Probar la especialidad, con volumen suficiente para ver resultados</div>
-        <div class="program-price-row"><span class="program-price">490 €</span><span class="program-price-note">+ IVA</span></div>
-        <p class="program-desc">Cuatro reels con dron FPV y un reportaje fotográfico profesional. La forma más directa de comprobar cómo cambia la percepción de vuestras cabañas cuando el contenido se sale del estándar del sector.</p>
-        <h4>Lo que os aporta</h4>
-        <ul class="aporta"><li>Alcance orgánico rápido en Instagram y TikTok</li><li>Material listo para publicar de forma consistente durante más de un mes</li><li>Diferenciación inmediata frente a cualquier alojamiento de la zona</li><li>Una prueba real del FPV antes de dar pasos mayores</li></ul>
-        <h4>Incluye</h4>
-        <ul class="includes"><li>Análisis previo y guion de las 4 piezas</li><li>Rodaje con dron FPV cinematográfico</li><li>Reportaje fotográfico: 30 fotos editadas</li><li>Modelo incluida en cámara</li><li>Grabación en atardecer y amanecer</li><li>Edición y color en DaVinci Resolve</li><li>Derechos de uso completos</li></ul>
-        <div class="program-footer">Requiere una noche de estancia en cabaña.</div>
-        <a class="btn program-cta ghost" data-wa data-wa-msg="Hola Io, somos de Cabanas do Navia. Nos interesa el Programa 01 · Reels FPV Signature. ¿Cuándo podemos hablar?" href="#">Quiero diferenciarme</a>
-      </div>
+    <!-- PRECIOS 2026 (sin IVA). Foto HDR: 150/200/250/320. Vídeo present.: 250/300/390/desde 490.
+         Drone Tour: 350/420/590/desde 750. Vídeo dron exterior: 150 € plano. Promoción: a medida. -->
+    <div class="price-scroll reveal">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Tipo de inmueble</th>
+            <th scope="col">Fotografía HDR</th>
+            <th scope="col">Vídeo presentación</th>
+            <th scope="col" class="col-featured">Drone Tour<span class="col-tag">La especialidad</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Vivienda unifamiliar<small>hasta 200 m²</small></th>
+            <td>150 €</td><td>250 €</td><td class="col-featured">350 €</td>
+          </tr>
+          <tr>
+            <th scope="row">Casa grande<small>200 – 400 m²</small></th>
+            <td>200 €</td><td>300 €</td><td class="col-featured">420 €</td>
+          </tr>
+          <tr>
+            <th scope="row">Pazo pequeño<small>o similar · 400 – 600 m²</small></th>
+            <td>250 €</td><td>390 €</td><td class="col-featured">590 €</td>
+          </tr>
+          <tr>
+            <th scope="row">Pazo grande<small>o similar · más de 600 m²</small></th>
+            <td>320 €</td><td>desde 490 €</td><td class="col-featured">desde 750 €</td>
+          </tr>
+          <tr>
+            <th scope="row">Promoción · edificio<small>varios inmuebles · zonas comunes</small></th>
+            <td>a medida</td><td>a medida</td><td class="col-featured">a medida</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note reveal">Precios sin IVA (21 %). Tarifas válidas para 2026. El inmueble debe estar ordenado y preparado para el rodaje en la fecha acordada.</p>
 
-      <div class="program featured reveal">
-        <div class="program-badge">Más elegido</div>
-        <div class="program-num">Programa 02</div>
-        <div class="program-name">Presencia Visual</div>
-        <div class="program-tagline">Elevar la percepción de vuestras cabañas de golpe</div>
-        <div class="program-price-row"><span class="program-price">890 €</span><span class="program-price-note">+ IVA</span></div>
-        <p class="program-desc">Un pack completo pensado para transformar cómo os ven vuestros clientes potenciales: web, portales, redes y prensa alineadas al mismo nivel de calidad que vuestro producto físico.</p>
-        <h4>Lo que os aporta</h4>
-        <ul class="aporta"><li>Todo vuestro material de temporada en una sola visita, sin compromiso mensual</li><li>Clientes que llegan con expectativa premium y menos ganas de negociar</li><li>Material profesional para toda la temporada</li><li>Home de vuestra web con un vídeo que retiene y convierte</li></ul>
-        <h4>Incluye</h4>
-        <ul class="includes"><li>Reportaje fotográfico profesional: 60 fotos editadas</li><li>4 Reels con dron FPV</li><li>2 Reels sociales complementarios</li><li>1 vídeo horizontal para la home</li><li>Modelo incluida en cámara</li><li>Derechos de uso completos</li></ul>
-        <div class="program-footer">Requiere una noche de estancia en cabaña.</div>
-        <a class="btn program-cta" data-wa data-wa-msg="Hola Io, somos de Cabanas do Navia. Nos interesa el Programa 02 · Presencia Visual. ¿Cuándo podemos hablar?" href="#">Quiero dar el salto <span class="arrow">→</span></a>
+    <div class="price-extra reveal">
+      <div class="pe-info">
+        <h3>Vídeo dron exterior</h3>
+        <p>Tomas aéreas del inmueble y su entorno. Precio único por propiedad, independiente del tamaño, que se puede sumar a cualquiera de los servicios anteriores.</p>
       </div>
-
-      <div class="program reveal">
-        <div class="program-num">Programa 03</div>
-        <div class="program-name">Programa 365</div>
-        <div class="program-tagline">Reservas todo el año, no solo en temporada alta</div>
-        <div class="program-price-row"><span class="program-price">2.670 €</span><span class="program-price-note">+ IVA / trimestre</span></div>
-        <span class="program-chip">Ahorro del 18 %</span>
-        <p class="program-desc">Contenido nuevo cada mes, cobertura de las cuatro estaciones y presencia continuada. Pensado para el problema real de todo alojamiento rural: la estacionalidad.</p>
-        <h4>Lo que os aporta</h4>
-        <ul class="aporta"><li>Ocupación en meses tradicionalmente flojos</li><li>Contenido para cada estación: nieve, vendimia, otoño, verano</li><li>Crecimiento orgánico sostenido en RRSS</li><li>Menor dependencia de Booking y otras OTAs</li><li>Un canal de captación propio los 365 días</li></ul>
-        <h4>Incluye cada trimestre</h4>
-        <ul class="includes"><li>3 sesiones de producción (una al mes)</li><li>Hasta 60 fotos editadas por sesión</li><li>24 Reels con dron FPV y contenido social</li><li>1 vídeo horizontal para la home, renovado por temporada</li><li>Planificación estratégica de calendario editorial</li><li>Reunión mensual de seguimiento</li><li>Informe de resultados al final del trimestre</li><li>Modelo incluida en cámara</li><li>Derechos de uso completos</li></ul>
-        <div class="program-footer">Ahorro del 18 % frente a contratar cada sesión por separado. 3 estancias, una por mes. Un trimestre cerrado, sin renovación automática.</div>
-        <a class="btn program-cta ghost" data-wa data-wa-msg="Hola Io, somos de Cabanas do Navia. Nos interesa el Programa 03 · Programa 365. ¿Cuándo podemos hablar?" href="#">Quiero constancia</a>
-      </div>
+      <div class="pe-price">150 €<small>+ IVA / propiedad</small></div>
     </div>
 
-    <div class="upgrade-note reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-      <p><strong>¿Dudáis entre empezar pequeño o ir a por todo?</strong>Empezad por el Programa 01: si en los 30 días siguientes decidís pasar al Programa 365, los 490 € ya pagados se descuentan íntegros. Probáis sin riesgo.</p>
+    <div class="included reveal">
+      <h3>Incluido en cada Drone Tour</h3>
+      <ul>
+        <li>Vuelo FPV interior + exterior en plano secuencia</li>
+        <li>Etalonado y postproducción profesional (DaVinci Resolve)</li>
+        <li>Versión vertical (Reels / TikTok) + horizontal (portal / web / YouTube)</li>
+        <li>Entrega en 72 h laborables</li>
+        <li>Derechos de uso en portales, web y redes de la agencia</li>
+        <li>Piloto homologado EASA / AESA</li>
+      </ul>
     </div>
 
     <div class="assurance">
@@ -990,13 +1089,17 @@
         <span><strong>Pago en dos partes</strong>50 % al confirmar fecha, 50 % contra entrega.</span>
       </div>
       <div class="assurance-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"/><path d="M8 19v2M12 20v2M16 19v2"/></svg>
-        <span><strong>¿Llueve el día del rodaje?</strong>Reprogramamos sin coste. Nunca contenido tibio.</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.7-6-10a6 6 0 0 1 12 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+        <span><strong>Desplazamiento</strong>Incluido hasta 100 km · después 0,28 €/km (ida y vuelta).</span>
       </div>
       <div class="assurance-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        <span><strong>Derechos completos</strong>Uso perpetuo en web, redes, portales y prensa.</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><strong>Entrega urgente</strong>24 – 48 h con un +25 % sobre la tarifa.</span>
       </div>
+    </div>
+
+    <div class="price-cta-row reveal">
+      <a class="btn" data-wa data-wa-msg="Hola Io, soy de una inmobiliaria y me gustaría pedir presupuesto para vuestros servicios audiovisuales." href="#">Pedir presupuesto <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1008,20 +1111,20 @@
     <h2 class="section-title reveal">Qué os devuelve invertir en <em>contenido profesional</em></h2>
     <div class="benefits-grid" style="margin-top: 44px;">
       <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2-7 4 14 3-9 2 4h5"/></svg></div>
-        <div><h3>Llegar a público nuevo</h3><p>Reels y fotos que se comparten en Instagram y TikTok, entrando en feeds de personas que hoy ni saben que existís.</p></div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l18-9-6 18-3.5-7z"/></svg></div>
-        <div><h3>Más reservas directas</h3><p>Contenido pensado para convertir en vuestra web, sin depender tanto de intermediarios.</p></div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M6 6c3 2 9 2 12 0M6 18c3-2 9-2 12 0"/></svg></div>
-        <div><h3>Reservas fuera de temporada alta</h3><p>Contenido estacional que os mantiene presentes durante todo el año, no solo en temporada alta.</p></div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18M8 15l3 3 5-6"/></svg></div>
+        <div><h3>Vender antes</h3><p>Anuncios que destacan en el portal reciben más clics y contactos cualificados, y reducen el tiempo que la propiedad pasa en el mercado.</p></div>
       </div>
       <div class="benefit reveal">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6 3-6"/></svg></div>
-        <div><h3>Percepción a la altura del producto</h3><p>Fotos y vídeos que hacen que el cliente llegue convencido de que ya es una oportunidad al precio publicado.</p></div>
+        <div><h3>Mayor percepción de valor</h3><p>Fotos y vídeos a la altura del inmueble hacen que el comprador llegue convencido de que es una oportunidad al precio publicado, y negocie menos.</p></div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2-7 4 14 3-9 2 4h5"/></svg></div>
+        <div><h3>Llegar a más compradores</h3><p>Vídeo y dron que se comparten en Instagram, TikTok y portales, entrando en feeds de personas que hoy ni saben que la propiedad existe.</p></div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17.3 5.7 21.4 8 14 2 9.4h7.6z"/></svg></div>
+        <div><h3>Ganar más exclusivas</h3><p>Cuando el propietario ve cómo presentáis las propiedades, elige vuestra agencia. El material profesional se convierte en argumento de captación.</p></div>
       </div>
     </div>
   </div>
@@ -1035,11 +1138,11 @@
     <p class="section-intro reveal">Sin improvisación: cada producción se planifica sobre plano antes de encender la cámara.</p>
     <div class="steps" id="steps">
       <div class="steps-fill" id="stepsFill" aria-hidden="true"></div>
-      <div class="step reveal"><div class="step-num">01</div><div class="step-body"><h3>Llamada inicial</h3><p>Para conocer las cabañas y objetivos concretos.</p></div></div>
-      <div class="step reveal"><div class="step-num">02</div><div class="step-body"><h3>Plan de rodaje</h3><p>Con emplazamientos, horas de luz y guion visual.</p></div></div>
-      <div class="step reveal"><div class="step-num">03</div><div class="step-body"><h3>Sesión en cabaña</h3><p>Planificada al minuto. Cero improvisación.</p></div></div>
-      <div class="step reveal"><div class="step-num">04</div><div class="step-body"><h3>Postproducción</h3><p>Retoque profesional y etalonaje de fotografía y vídeos.</p></div></div>
-      <div class="step reveal"><div class="step-num">05</div><div class="step-body"><h3>Entrega</h3><p>En 10 días laborables, listo para publicar.</p></div></div>
+      <div class="step reveal"><div class="step-num">01</div><div class="step-body"><h3>Llamada inicial</h3><p>Para conocer la propiedad, el público objetivo y qué servicios encajan.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div class="step-body"><h3>Plan de rodaje</h3><p>Con recorrido, horas de luz y guion visual del inmueble.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div class="step-body"><h3>Sesión en la propiedad</h3><p>Planificada al minuto. Cero improvisación, mínima molestia.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div class="step-body"><h3>Postproducción</h3><p>Retoque HDR y etalonaje profesional de fotografía y vídeo.</p></div></div>
+      <div class="step reveal"><div class="step-num">05</div><div class="step-body"><h3>Entrega</h3><p>Material listo para portales, web y redes, en pocos días.</p></div></div>
     </div>
   </div>
 </section>
@@ -1057,13 +1160,13 @@
         </div>
       </div>
       <div class="about-body reveal">
-        <p>Soy <strong>directora creativa y operadora de dron FPV</strong> especializada en contenido para alojamientos, turismo y hospitality en Galicia. Trabajo bajo mi marca, Kulmen Visuals, con base en Pontevedra.</p>
-        <p>Antes de especializarme en contenido para espacios, pasé años en agencias y productoras, viendo de cerca qué contenido realmente mueve una decisión de compra y qué contenido solo ocupa espacio en el feed. Esa mirada estratégica es la que aplico a cada proyecto que hago hoy: <strong>no grabo para que quede bonito, lo hago para que genere reservas</strong>. Contenido audiovisual bajo un mismo criterio: sin equipos externos, sin subcontratación, sin que la idea se diluya por el camino.</p>
-        <p class="about-statement">El contenido no es un adorno: <strong>es lo que decide si un cliente potencial reserva con vosotros o sigue mirando</strong>.</p>
+        <p>Soy <strong>directora creativa y operadora de dron FPV</strong> especializada en contenido audiovisual para inmobiliarias y propiedades en Galicia. Trabajo bajo mi marca, Kulmen Visuals, con base en Pontevedra.</p>
+        <p>Antes de especializarme en contenido para espacios, pasé años en agencias y productoras, viendo de cerca qué contenido realmente mueve una decisión de compra y qué contenido solo ocupa espacio en el feed. Esa mirada estratégica es la que aplico a cada inmueble: <strong>no grabo para que quede bonito, lo hago para que la propiedad se venda antes y a mejor precio</strong>. Contenido audiovisual bajo un mismo criterio: sin equipos externos, sin subcontratación, sin que la idea se diluya por el camino.</p>
+        <p class="about-statement">El contenido no es un adorno: <strong>es lo que decide si un comprador contacta con vosotros o sigue mirando</strong>.</p>
         <div class="credentials">
           <div class="credential reveal"><div class="credential-label">Certificación</div><div class="credential-value">Operadora oficial EASA / AESA</div></div>
           <div class="credential reveal"><div class="credential-label">Experiencia</div><div class="credential-value">Productoras de cine y agencias de marketing</div></div>
-          <div class="credential reveal"><div class="credential-label">Especialidad</div><div class="credential-value">Turismo, hospitality y alojamientos premium</div></div>
+          <div class="credential reveal"><div class="credential-label">Especialidad</div><div class="credential-value">Inmobiliaria y propiedades premium</div></div>
         </div>
       </div>
     </div>
@@ -1077,8 +1180,12 @@
     <h2 class="section-title reveal">Todo lo demás, <em>resuelto</em></h2>
     <div class="faq-list reveal" style="margin-top: 44px;">
       <details class="faq-item">
-        <summary>¿Y si el día de rodaje llueve?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a">Reprogramamos sin coste. Prefiero reagendar antes que entregaros contenido tibio.</div>
+        <summary>¿Puedo contratar un solo servicio?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Sí. Cada servicio se contrata por separado según lo que necesite cada propiedad: podéis pedir solo fotografía, solo el Drone Tour, o la combinación que queráis.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Trabajáis con carteras grandes o de forma recurrente?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Sí. Para agencias con volumen de propiedades preparo una tarifa a medida y un flujo de trabajo ágil para publicar cada inmueble sin cuellos de botella.</div>
       </details>
       <details class="faq-item">
         <summary>¿Los precios incluyen IVA?<span class="faq-icon" aria-hidden="true"></span></summary>
@@ -1086,23 +1193,23 @@
       </details>
       <details class="faq-item">
         <summary>¿Cómo son los pagos?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a">50 % al confirmar la fecha, 50 % contra entrega. En el Programa 365, mensualidades a mes vencido.</div>
+        <div class="faq-a">50 % al confirmar la fecha, 50 % contra entrega. Para colaboración recurrente, condiciones a convenir.</div>
       </details>
       <details class="faq-item">
         <summary>¿A quién pertenece el material?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a">Vosotros tenéis derechos de uso completos y perpetuos para vuestras plataformas (web, redes, portales, prensa). Yo conservo derechos de portfolio.</div>
+        <div class="faq-a">Vosotros tenéis derechos de uso completos y perpetuos para vuestras plataformas (portales, web, redes, prensa). Yo conservo derechos de portfolio.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Cuánto tarda la entrega?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a">10 días laborables desde el rodaje.</div>
+        <summary>¿Y si el día de rodaje llueve?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Las tomas exteriores y de dron se reprograman sin coste. Prefiero reagendar antes que entregaros material mediocre.</div>
       </details>
       <details class="faq-item">
-        <summary>¿Puedo cambiar de programa?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a">Sí. Si empezáis con el Reels FPV Signature y queréis pasar al Programa 365 en los 30 días siguientes, descuento los 490 € ya pagados.</div>
+        <summary>¿Hace falta preparar la propiedad?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Ayuda mucho que esté ordenada y despejada. Antes del rodaje os paso una checklist sencilla para que cada estancia luzca al máximo.</div>
       </details>
       <details class="faq-item">
         <summary>¿Hasta dónde os desplazáis?<span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a">Vuestra zona entra sin problema. Kilometraje incluido para toda Galicia y Asturias occidental.</div>
+        <div class="faq-a">El desplazamiento va incluido hasta 100 km (ida y vuelta); a partir de ahí, 0,28 €/km. Así podéis contar conmigo esté donde esté la propiedad.</div>
       </details>
     </div>
   </div>
@@ -1112,10 +1219,10 @@
 <section class="cta-final">
   <div class="wrap">
     <span class="cta-eyebrow reveal">El siguiente paso</span>
-    <h2 class="reveal">Vuestras cabañas ya son <span class="blanco">excepcionales</span>. Ahora contadlas al público que aún no las conoce.</h2>
-    <p class="cta-sub reveal">Una conversación de 15 minutos basta para ver qué programa encaja con vuestros objetivos. Sin compromiso.</p>
+    <h2 class="reveal">Vuestras propiedades ya <span class="blanco">valen mucho</span>. Ahora enseñadlas para que se vendan antes.</h2>
+    <p class="cta-sub reveal">Una conversación de 15 minutos basta para ver qué servicios encajan con vuestra cartera. Sin compromiso.</p>
     <div class="hero-actions reveal">
-      <a class="btn btn-negro" data-wa data-wa-msg="Hola Io, hemos visto la propuesta para Cabanas do Navia y nos gustaría dar el siguiente paso." href="#">
+      <a class="btn btn-negro" data-wa data-wa-msg="Hola Io, soy de una inmobiliaria y me gustaría dar el siguiente paso con vuestros servicios audiovisuales." href="#">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.8-4.3-.1-.2-1.2-1.5-1.2-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.3z"/></svg>
         Hablemos por WhatsApp
       </a>
@@ -1141,9 +1248,9 @@
 </footer>
 
 <!-- ============ FAB ============ -->
-<a class="fab" id="fab" data-wa data-wa-msg="Hola Io, hemos visto la propuesta para Cabanas do Navia y nos gustaría hablar contigo." href="#" aria-label="Abrir conversación de WhatsApp">
+<a class="fab" id="fab" data-wa data-wa-msg="Hola Io, soy de una inmobiliaria y me gustaría saber más sobre vuestros servicios audiovisuales." href="#" aria-label="Abrir conversación de WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.8-4.3-.1-.2-1.2-1.5-1.2-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .2 0 .7-.3 1.3z"/></svg>
-  <span class="fab-label">¿Hablamos de vuestras cabañas?</span>
+  <span class="fab-label">¿Hablamos de vuestras propiedades?</span>
 </a>
 
 <!-- ============ LIGHTBOX ============ -->
@@ -1172,7 +1279,7 @@
   const WA_NUMBER = '34652405654';
 
   document.querySelectorAll('[data-wa]').forEach((el) => {
-    const msg = el.getAttribute('data-wa-msg') || 'Hola Io, hemos visto la propuesta para Cabanas do Navia.';
+    const msg = el.getAttribute('data-wa-msg') || 'Hola Io, soy de una inmobiliaria y me gustaría saber más sobre vuestros servicios audiovisuales.';
     el.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
     el.target = '_blank';
     el.rel = 'noopener';
