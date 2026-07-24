@@ -564,6 +564,21 @@
   }
   .price-cta-row { display: flex; justify-content: center; margin-top: 34px; }
 
+  /* ============ QUÉ INCLUYE (operativo) ============ */
+  .specs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+  .spec { padding: 30px 30px 28px; border-radius: var(--r-lg); background: var(--carbon); border: 1px solid var(--linea); }
+  .spec-kicker { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 10px; }
+  .spec h3 { font-size: 1.18rem; font-weight: 600; letter-spacing: -.02em; color: var(--hueso); margin-bottom: 18px; }
+  .spec ul { list-style: none; display: grid; gap: 10px; }
+  .spec li { position: relative; padding-left: 26px; font-size: .92rem; color: var(--niebla); font-weight: 300; line-height: 1.5; }
+  .spec li::before {
+    content: ''; position: absolute; left: 0; top: 4px; width: 14px; height: 14px; background-color: var(--ambar);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .spec li.pending { color: var(--niebla-2); }
+  .spec li.pending::before { background-color: var(--niebla-2); }
+
   /* ============ PILARES ============ */
   .benefits-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
   .benefit {
@@ -576,8 +591,33 @@
   .benefit-icon {
     width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; flex-shrink: 0;
     background: rgba(245,151,21,.12); color: var(--ambar); border: 1px solid rgba(245,151,21,.28);
+    position: relative; transition: transform .4s var(--ease), background .3s, border-color .3s;
   }
   .benefit-icon svg { width: 21px; height: 21px; }
+  .benefit:hover .benefit-icon { transform: scale(1.08); background: rgba(245,151,21,.2); border-color: rgba(245,151,21,.5); }
+
+  /* Vender antes — sello de confirmación */
+  .benefit:hover .bi-sell svg { animation: bi-stamp .55s var(--ease); }
+  @keyframes bi-stamp { 0% { transform: scale(1); } 35% { transform: scale(.82); } 68% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+  /* Mayor percepción de valor — destello del diamante */
+  .benefit:hover .bi-gem svg { animation: bi-shine 1s var(--ease); }
+  @keyframes bi-shine {
+    0%   { transform: rotate(0) scale(1);       filter: drop-shadow(0 0 0 rgba(247,171,61,0)); }
+    40%  { transform: rotate(-6deg) scale(1.1);  filter: drop-shadow(0 0 6px rgba(247,171,61,.9)); }
+    100% { transform: rotate(0) scale(1);        filter: drop-shadow(0 0 0 rgba(247,171,61,0)); }
+  }
+
+  /* Llegar a más compradores — ondas de alcance */
+  .bi-reach::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 1px solid var(--ambar); opacity: 0; pointer-events: none; }
+  .benefit:hover .bi-reach::after { animation: bi-ripple 1.2s ease infinite; }
+  @keyframes bi-ripple { 0% { opacity: .55; transform: scale(1); } 100% { opacity: 0; transform: scale(1.65); } }
+  .benefit:hover .bi-reach svg { animation: bi-beat 1.2s var(--ease) infinite; }
+  @keyframes bi-beat { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.15); } }
+
+  /* Ganar más exclusivas — estrella que gira */
+  .benefit:hover .bi-star svg { animation: bi-star .7s var(--ease); }
+  @keyframes bi-star { 0% { transform: rotate(0) scale(1); } 55% { transform: rotate(200deg) scale(1.18); } 100% { transform: rotate(360deg) scale(1); } }
   .benefit h3 { font-size: 1.08rem; font-weight: 600; letter-spacing: -.015em; color: var(--hueso); margin-bottom: 8px; }
   .benefit p { font-size: .93rem; color: var(--niebla); line-height: 1.7; font-weight: 300; }
 
@@ -767,6 +807,7 @@
     .formats, .problems, .programs, .projects, .credentials, .assurance { grid-template-columns: 1fr; }
     .benefits-grid { grid-template-columns: 1fr; }
     .included ul { grid-template-columns: 1fr; }
+    .specs { grid-template-columns: 1fr; }
     .feature-videos { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
     .fv-frame--vertical { aspect-ratio: 9/16; max-width: 300px; margin: 0 auto; }
     .photo-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -930,7 +971,7 @@
         </div>
         <span class="format-kicker">La base</span>
         <h3>Fotografía HDR</h3>
-        <p>La primera impresión de un comprador en Idealista, vuestra web y redes: Fotografía HDR con luces equilibradas, ventanas que no se queman y espacios que se ven amplios y luminosos.</p>
+        <p>La primera impresión de un comprador en Idealista, vuestra web y redes: Fotografía HDR con luces equilibradas y espacios que se ven amplios y luminosos.</p>
         <p class="format-highlight">La imagen que decide si hacen clic o siguen bajando, cuidada al detalle.</p>
       </div>
       <div class="format format-reel reveal">
@@ -942,7 +983,7 @@
         <span class="format-kicker">El recorrido</span>
         <h3>Vídeo de presentación</h3>
         <p>Cuando la foto ya ha captado la atención, el comprador quiere sentir la propiedad. En menos de un minuto, un vídeo con planos de interior y exterior muestra lo más destacable y transmite todo su ambiente.</p>
-        <p class="format-highlight">El vídeo que decide si piden una visita o siguen buscando, con el ambiente que una foto no puede dar.</p>
+        <p class="format-highlight">El vídeo que aumenta el interés y filtra hacia compradores cualificados.</p>
       </div>
       <div class="format format-drone reveal">
         <span class="format-glare" aria-hidden="true"></span>
@@ -950,9 +991,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="5" r="2.6"/><circle cx="19" cy="5" r="2.6"/><circle cx="5" cy="19" r="2.6"/><circle cx="19" cy="19" r="2.6"/><rect x="9.4" y="9.4" width="5.2" height="5.2" rx="1.4"/><path d="M7 7l2.6 2.6M17 7l-2.6 2.6M7 17l2.6-2.6M17 17l-2.6-2.6"/></svg>
         </div>
         <span class="format-kicker">La diferencia</span>
-        <h3>Drone Tour Inmobiliario</h3>
-        <p>Para las propiedades que merecen destacar de verdad. Un plano secuencia en primera persona con dron FPV recorre el inmueble de fuera a dentro, sin cortes, y sumerge al comprador como si ya estuviera dentro. La especialidad que casi ninguna agencia puede ofrecer: exige años de práctica, homologación EASA/AESA y equipo específico.</p>
-        <p class="format-highlight">El recorrido que convierte un anuncio en una experiencia que se recuerda y se comparte.</p>
+        <h3>Drone Tour FPV</h3>
+        <p>Para el comprador que ya va en serio y quiere hacerse una idea real de la casa. Un plano secuencia sin cortes con dron FPV lo guía por todo el inmueble, interior y exterior, sin que tenga que hacer nada: el formato que convierte una propiedad en una experiencia inmersiva. La especialidad que casi ninguna agencia puede ofrecer: exige años de práctica, homologación EASA/AESA y equipo específico.</p>
+        <p class="format-highlight">Entiende toda la casa en menos de un minuto, sin pinchar ni explorar: solo tiene que dejarse llevar.</p>
       </div>
       <div class="format format-drone reveal">
         <span class="format-glare" aria-hidden="true"></span>
@@ -961,8 +1002,74 @@
         </div>
         <span class="format-kicker">El contexto</span>
         <h3>Vídeo dron exterior</h3>
-        <p>Toda propiedad genera la misma duda: ¿dónde está y qué hay alrededor? Las tomas aéreas la responden antes de que la pregunten, situando el inmueble en su entorno: parcela, orientación y cercanía al mar, al monte o al centro. Imprescindible en chalets, fincas y obra nueva, donde el terreno y la ubicación son parte del precio.</p>
-        <p class="format-highlight">El contexto que vende la parcela y la ubicación, y que ninguna foto de interior puede mostrar.</p>
+        <p>Nadie compra solo una casa: compra una zona y el estilo de vida que viene con ella. Las tomas aéreas presentan la ubicación y el entorno del inmueble —parcela, orientación, cercanía al mar, al monte o al centro— para que el comprador se proyecte viviendo allí. Imprescindible en chalets, fincas y obra nueva, donde el sitio vende tanto como la propiedad.</p>
+        <p class="format-highlight">El vídeo que vende la zona por vosotros, sin mediar palabra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUÉ INCLUYE CADA SERVICIO (operativo) ============ -->
+<section id="incluye">
+  <div class="wrap">
+    <span class="eyebrow reveal">En detalle</span>
+    <h2 class="section-title reveal">Qué incluye <em>cada servicio</em></h2>
+    <p class="section-intro reveal">El desglose de lo que recibís en cada servicio y en qué formato.</p>
+
+    <div class="specs">
+      <div class="spec reveal">
+        <span class="spec-kicker">Servicio 01</span>
+        <h3>Fotografía HDR</h3>
+        <ul>
+          <li>60–120 fotografías finales en alta resolución</li>
+          <li>Fotografía aérea incluida</li>
+          <li>Técnica HDR: interior, exterior y detalle</li>
+          <li>Retoque y edición profesional</li>
+          <li>Entrega optimizada para portales, web y redes</li>
+          <li>Entrega en 7 días laborables</li>
+          <li>Derechos de uso en portales, web y redes de la agencia</li>
+        </ul>
+      </div>
+
+      <div class="spec reveal">
+        <span class="spec-kicker">Servicio 02</span>
+        <h3>Vídeo de presentación</h3>
+        <ul>
+          <li>Vídeo de hasta 1 minuto</li>
+          <li>Planos de interior y exterior</li>
+          <li>Edición, música y etalonaje profesional</li>
+          <li>Versión horizontal (portal / web / YouTube) o vertical (Reels / TikTok)</li>
+          <li>Entrega en 15 días laborables</li>
+          <li>Derechos de uso en portales, web y redes de la agencia</li>
+        </ul>
+      </div>
+
+      <div class="spec reveal">
+        <span class="spec-kicker">Servicio 03</span>
+        <h3>Drone Tour FPV</h3>
+        <ul>
+          <li>Vuelo FPV interior + exterior en plano secuencia</li>
+          <li>Etalonado y postproducción profesional</li>
+          <li>Versión horizontal (portal / web / YouTube) + vertical (Reels / TikTok)</li>
+          <li>Entrega en 7 días laborables</li>
+          <li>Piloto homologado EASA / AESA</li>
+          <li>Permisos de vuelo y seguro gestionados</li>
+          <li>Derechos de uso en portales, web y redes de la agencia</li>
+        </ul>
+      </div>
+
+      <div class="spec reveal">
+        <span class="spec-kicker">Servicio 04</span>
+        <h3>Vídeo dron exterior</h3>
+        <ul>
+          <li>Vídeo de entre 15 y 30 segundos</li>
+          <li>Vuelo aéreo del inmueble y su entorno</li>
+          <li>Clip editado y etalonado</li>
+          <li>Entrega en 7 días laborables</li>
+          <li>Piloto homologado EASA / AESA</li>
+          <li>Permisos de vuelo y seguro gestionados</li>
+          <li>Derechos de uso en portales, web y redes de la agencia</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -973,12 +1080,12 @@
   <div class="wrap">
     <span class="eyebrow reveal">Trabajo real</span>
     <h2 class="section-title reveal">Casos con <em>propiedades e inmobiliarias</em></h2>
-    <p class="section-intro reveal">Un ejemplo real de cada formato de vídeo aplicado a propiedades. La fotografía la tienes más abajo, en la galería.</p>
+    <p class="section-intro reveal">Un ejemplo real de cada formato de vídeo aplicado a propiedades.</p>
 
     <div class="feature-videos">
       <div class="feature-video reveal">
         <div class="fv-frame">
-          <iframe src="https://player.vimeo.com/video/1212461238?title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&playsinline=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vídeo de presentación de propiedad"></iframe>
+          <iframe src="https://player.vimeo.com/video/1212461238?background=1&autoplay=1&loop=1&muted=1&playsinline=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vídeo de presentación de propiedad"></iframe>
         </div>
         <div class="fv-meta">
           <div class="fv-client">Vídeo de presentación</div>
@@ -987,16 +1094,16 @@
       </div>
       <div class="feature-video reveal">
         <div class="fv-frame">
-          <iframe src="https://player.vimeo.com/video/1212461582?title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&playsinline=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Drone Tour Inmobiliario FPV"></iframe>
+          <iframe src="https://player.vimeo.com/video/1212461582?background=1&autoplay=1&loop=1&muted=1&playsinline=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Drone Tour FPV"></iframe>
         </div>
         <div class="fv-meta">
-          <div class="fv-client">Drone Tour Inmobiliario</div>
+          <div class="fv-client">Drone Tour FPV</div>
           <div class="fv-title">Plano secuencia FPV · interior y exterior</div>
         </div>
       </div>
       <div class="feature-video reveal">
         <div class="fv-frame fv-frame--vertical">
-          <iframe src="https://player.vimeo.com/video/1212462246?title=0&byline=0&portrait=0&autoplay=1&loop=1&muted=1&playsinline=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vídeo dron exterior"></iframe>
+          <iframe src="https://player.vimeo.com/video/1212462246?background=1&autoplay=1&loop=1&muted=1&playsinline=1" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vídeo dron exterior"></iframe>
         </div>
         <div class="fv-meta">
           <div class="fv-client">Vídeo dron exterior</div>
@@ -1103,18 +1210,6 @@
       <div class="pe-price">150 €<small>+ IVA / propiedad</small></div>
     </div>
 
-    <div class="included reveal">
-      <h3>Incluido en cada Drone Tour</h3>
-      <ul>
-        <li>Vuelo FPV interior + exterior en plano secuencia</li>
-        <li>Etalonado y postproducción profesional (DaVinci Resolve)</li>
-        <li>Versión vertical (Reels / TikTok) + horizontal (portal / web / YouTube)</li>
-        <li>Entrega en 72 h laborables</li>
-        <li>Derechos de uso en portales, web y redes de la agencia</li>
-        <li>Piloto homologado EASA / AESA</li>
-      </ul>
-    </div>
-
     <div class="assurance">
       <div class="assurance-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
@@ -1143,19 +1238,19 @@
     <h2 class="section-title reveal">Qué os devuelve invertir en <em>contenido profesional</em></h2>
     <div class="benefits-grid" style="margin-top: 44px;">
       <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18M8 15l3 3 5-6"/></svg></div>
+        <div class="benefit-icon bi-sell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18M8 15l3 3 5-6"/></svg></div>
         <div><h3>Vender antes</h3><p>Anuncios que destacan en el portal reciben más clics y contactos cualificados, y reducen el tiempo que la propiedad pasa en el mercado.</p></div>
       </div>
       <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6 3-6"/></svg></div>
+        <div class="benefit-icon bi-gem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6 3-6"/></svg></div>
         <div><h3>Mayor percepción de valor</h3><p>Fotos y vídeos a la altura del inmueble hacen que el comprador llegue convencido de que es una oportunidad al precio publicado, y negocie menos.</p></div>
       </div>
       <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2-7 4 14 3-9 2 4h5"/></svg></div>
+        <div class="benefit-icon bi-reach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2-7 4 14 3-9 2 4h5"/></svg></div>
         <div><h3>Llegar a más compradores</h3><p>Vídeo y dron que se comparten en Instagram, TikTok y portales, entrando en feeds de personas que hoy ni saben que la propiedad existe.</p></div>
       </div>
       <div class="benefit reveal">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17.3 5.7 21.4 8 14 2 9.4h7.6z"/></svg></div>
+        <div class="benefit-icon bi-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17.3 5.7 21.4 8 14 2 9.4h7.6z"/></svg></div>
         <div><h3>Ganar más exclusivas</h3><p>Cuando el propietario ve cómo presentáis las propiedades, elige vuestra agencia. El material profesional se convierte en argumento de captación.</p></div>
       </div>
     </div>
